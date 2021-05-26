@@ -12,14 +12,19 @@ public class Task4 {
         for(int i = 0; i < mas.length; i ++){
             mas[i] = rand.nextInt(10001);
         }
+        System.out.println(Arrays.toString(mas));
 
             for (int i = 0; i < mas.length - 2; i++) {
 
-                int temp = mas[i] + mas[i + 1] + mas[i + 2];
+                int temp = 0;
+
+                for(int j = 0; j < 3; j++)
+                    temp +=mas[i + j];
+
 
                 if (temp > max) {
                     max = temp;
-                    index = i;
+                    index = i + 1;
                 }
             }
 

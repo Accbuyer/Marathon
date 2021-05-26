@@ -11,8 +11,9 @@ public class Task3 {
         int index = 0;
         Random rand = new Random();
 
-        for(int i = 0; i < 12; i++){
-            for(int j = 0; j < 8; j++){
+
+        for(int i = 0; i < mas.length; i++){
+            for(int j = 0; j < mas[i].length; j++){
                 mas[i][j] = rand.nextInt(51);
             }
         }
@@ -29,11 +30,11 @@ public class Task3 {
 
 
         int temp = 0;
-        for(int i = 0; i < 12; i++){
+        for(int i = 0; i < mas.length; i++){
 
             temp = 0;
 
-            for(int j = 0; j < 8; j++){
+            for(int j = 0; j < mas[i].length; j++){
                 temp += mas[i][j];
             }
 

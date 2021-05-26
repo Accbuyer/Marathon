@@ -6,16 +6,18 @@ import java.util.Scanner;
 
 public class Task2 {
     public static void main(String[] args) {
-        int max = 0;
-        int min = 0;
+
         int zero_count = 0;
         int zero_sum = 0;
         int mas [] = new int [100];
         Random rand = new Random();
 
-        for(int i = 0; i < 100; i++){
+        for(int i = 0; i < mas.length; i++){
             mas[i] = rand.nextInt(1001);
         }
+
+        int max = 0;
+        int min = mas[0];
         for (int x : mas) {
             if(x > max)
                 max = x;
