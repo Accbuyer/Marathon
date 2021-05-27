@@ -19,19 +19,19 @@ public class Task4 {
                 int temp = 0;
 
                 for(int j = 0; j < 3; j++)
-                    temp +=mas[i + j];
+                    temp +=mas[i+j];
 
 
                 if (temp > max) {
                     max = temp;
-                    index = i + 1;
+                    index = i;
                 }
             }
 
         
 
         System.out.println(max);
-        System.out.println(index);
+        System.out.println(index + 1);
 
     }
 }

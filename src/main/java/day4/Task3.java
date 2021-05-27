@@ -40,9 +40,9 @@ public class Task3 {
 
             if(temp > maxSum){
                 maxSum = temp;
-                index = i + 1;
+                index = i;
             }
         }
-        System.out.println(index);
+        System.out.println(index + 1);
     }
 }
