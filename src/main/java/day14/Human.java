@@ -6,9 +6,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Task2 {
-    public static List<String> parseFileToStringList(File file){
-        List<String> list = new ArrayList<>();
+public class Human {
+    private String name;
+    private int age;
+
+    public Human(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    public static List<Human> parseFileToObjList(File file){
+        List<Human> list = new ArrayList<>();
+
         try {
             Scanner sc = new Scanner(file);
 
@@ -20,22 +28,34 @@ public class Task2 {
                     throw new IllegalAccessException();
                 }
 
-                list.add(person[0] + " " + person[1]);
+                list.add(new Human(person[0], Integer.parseInt(person[1])));
             }
 
-            return list;
 
         } catch (FileNotFoundException e) {
             System.err.println("Файл не найден!");
 
         } catch (IllegalAccessException e) {
             System.err.println("Некорректный входной файл!");
-            return new ArrayList<>();
+
         }
+
         return list;
     }
-    public static void main(String[] args) {
-        System.out.println(parseFileToStringList(new File("src/main/java/day14/people.txt")));
 
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    @Override
+    public String toString() {
+        return "Human{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
